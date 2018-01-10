@@ -11,6 +11,7 @@ module SEPA
     convert :amount, to: :decimal
 
     validates_length_of :name, within: 1..70
+    validates_length_of :currency, is: 3
     validates_length_of :instruction, within: 1..35, allow_nil: true
     validates_length_of :reference, within: 1..35, allow_nil: true
     validates_length_of :remittance_information, within: 1..140, allow_nil: true
@@ -28,6 +29,7 @@ module SEPA
       self.currency ||= 'EUR'
       self.reference ||= 'NOTPROVIDED'
       self.batch_booking = true if self.batch_booking.nil?
+      self.currency ||= 'EUR'
     end
 
     protected
