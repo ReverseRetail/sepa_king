@@ -26,7 +26,6 @@ module SEPA
       end
 
       self.requested_date ||= DEFAULT_REQUESTED_DATE
-      self.currency ||= 'EUR'
       self.reference ||= 'NOTPROVIDED'
       self.batch_booking = true if self.batch_booking.nil?
       self.currency ||= 'EUR'
